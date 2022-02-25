@@ -1,15 +1,15 @@
 /// <reference types="cypress" />
-let dadosLogin
+const dadosLogin = require('../fixtures/perfil.json')
 
 context('Funcionalidade Login', () => {
-    before(() => {
-        cy.fixture('perfil').then(perfil => {
-            dadosLogin = perfil
-        })
-    });
+    // before(() => {
+    //     cy.fixture('perfil').then(perfil => {
+    //         dadosLogin = perfil
+    //     })
+    // });
 
     beforeEach(() => {
-        cy.visit('minha-conta')
+        cy.visit('minha-conta/')
     });
 
     afterEach(() => {
