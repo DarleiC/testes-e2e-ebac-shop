@@ -15,7 +15,7 @@ describe('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     beforeEach(() => {
         cy.visit('produtos/')
     });
-    it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
+    it.skip('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
         let nomeFaker = faker.name.firstName()
         let sobrenomeFaker = faker.name.lastName()
         let empresaFaker = faker.company.companyName()
