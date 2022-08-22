@@ -13,9 +13,9 @@ describe('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         E validando minha compra ao final */
     
     beforeEach(() => {
-        cy.visit('produtos/')
+        cy.visit('produtos/page/2/')
     });
-    it.skip('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
+    it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
         let nomeFaker = faker.name.firstName()
         let sobrenomeFaker = faker.name.lastName()
         let empresaFaker = faker.company.companyName()
@@ -36,7 +36,7 @@ describe('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             dadosProdutos[0].quantidade
         )
         cy.get('.woocommerce-message').should('contain', '“'+ dadosProdutos[0].nome +'” foi adicionado no seu carrinho.')
-        cy.visit('produtos/')
+        cy.visit('produtos/page/2/')
         addProduto.adicionaProduto(
             dadosProdutos[1].nome,
             dadosProdutos[1].tamanho,
@@ -44,7 +44,7 @@ describe('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             dadosProdutos[1].quantidade
         )
         cy.get('.woocommerce-message').should('contain', '“'+ dadosProdutos[1].nome +'” foi adicionado no seu carrinho.')
-        cy.visit('produtos/')
+        cy.visit('produtos/page/2/')
         addProduto.adicionaProduto(
             dadosProdutos[2].nome,
             dadosProdutos[2].tamanho,
@@ -52,7 +52,7 @@ describe('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             dadosProdutos[2].quantidade
         )
         cy.get('.woocommerce-message').should('contain', '“'+ dadosProdutos[2].nome +'” foi adicionado no seu carrinho.')
-        cy.visit('produtos/')
+        cy.visit('produtos/page/2/')
         addProduto.adicionaProduto(
             dadosProdutos[3].nome,
             dadosProdutos[3].tamanho,
@@ -72,6 +72,6 @@ describe('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             // checar se foi finalizado com sucesso
         cy.get('#terms').check()
         cy.get('#place_order').contains('FINALIZAR COMPRA',{ matchCase: false }).click()
-        cy.get('.woocommerce-notice').should('contain','Obrigado. Seu pedido foi recebido.')
+        cy.get('.woocommerce-notice', { timeout: 10000 }).should('be.visible').should('contain','Obrigado. Seu pedido foi recebido.')
     });
 });

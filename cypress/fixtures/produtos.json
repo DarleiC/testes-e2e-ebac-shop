@@ -1,24 +1,24 @@
 [{
-    "nome":"Ariel Roll Sleeve Sweatshirt",
-    "tamanho":"L",
+    "nome":"Atomic Endurance Running Tee (Crew-Neck)",
+    "tamanho":"S",
+    "cor":"Black",
+    "quantidade":1
+},
+{
+    "nome":"Atomic Endurance Running Tee (V-neck)",
+    "tamanho":"S",
     "cor":"Green",
     "quantidade":1
 },
 {
-    "nome":"Aero Daily Fitness Tee",
-    "tamanho":"XS",
-    "cor":"Brown",
+    "nome":"Augusta Pullover Jacket",
+    "tamanho":"S",
+    "cor":"Blue",
     "quantidade":1
 },
 {
-    "nome":"Abominable Hoodie",
-    "tamanho":"XS",
+    "nome":"Autumn Pullie",
+    "tamanho":"S",
     "cor":"Red",
-    "quantidade":1
-},
-{
-    "nome":"Aether Gym Pant",
-    "tamanho":33,
-    "cor":"Green",
     "quantidade":1
 }]
